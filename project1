@@ -1,0 +1,38 @@
+#!/bin/bash
+Description:Project1
+Author: Vanissa
+Date: 04/2022
+
+###Installation of Apache on centos7###
+
+What is Apache?
+Apache is a free and open-source software that allows users to deploy their websites on the internet. It is one of the oldest anthe Apache Software Foundation, with the first version released in 1995.There are other webserver softwares available like tomcat, iis, nginx and mored most reliable web server software maintained by .
+To install apache, we need a Centos/redhat machine and we can run below commands:
+
+ yum install httpd -y ( httpd is the package name for apache on centos/redhat system)
+
+ systemctl status httpd ( to check the httpd daemon/service)
+
+ systemctl start httpd (to start the daemon)
+
+ ifconfig (get the ip address and type it on the browser. you will see a default apache page.)
+
+#Sometimes the system has firewall enabled. In that case, we need to open port 80 on the system since apache runs on port 80:
+
+ firewall-cmd --permanent --add-port=80/tcp
+
+ firewall-cmd --reload
+
+#We can move into /var/www/html, add an index.html file to replace the default content on the browser.
+
+ cd /var/www/html
+
+ touch index.html
+ 
+ vi index.html
+<h1>This is my first personal website</h1>
+:wq (to save and quit)
+
+#Then refresh the browser to see the new content.
+TODO: There is a need for a webserver in your team, please follow these steps to install one.
+
